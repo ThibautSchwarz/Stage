@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>test onsubmit</title>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+	<script>
+	function charger(){
+	var date=new Date();
+	document.getElementById("nom").innerHTML="Patient : "+nom;
+	document.getElementById("prenom").innerHTML=prenom;
+	document.getElementById("sexe").innerHTML="sexe : "+sexe;
+	document.getElementById("poids").innerHTML="poids : "+poids;
+	document.getElementById("taille").innerHTML="taille : "+taille;
+	document.getElementById("age").innerHTML="age : "+age;
+	document.getElementById("IPP").innerHTML="IPP : "+id;
+	document.getElementById("numvenue").innerHTML="Numéro de venue : "+numvenue;
+	document.getElementById("hebergement").innerHTML="UF Hébergement : "+heberg;
+	document.getElementById("medical").innerHTML="UF Médicale : "+medic;
+	document.getElementById("titre").innerHTML="Titre : "+titre;
+	document.getElementById("nomchef").innerHTML="Nom complet : "+nomchef;
+	document.getElementById("numChef").innerHTML="n° RPPS : "+rpps;
+	document.getElementById("allerg").innerHTML="Allergies et autres intolérances : "+allergies;
+	document.getElementById("prescription").innerHTML=presc;
+	document.getElementById("date").innerHTML="Enregistré le : "+date.getDate()+"-"+(date.getMonth()+1)+"-"+date.getYear()+" par "+responsable;	
+	}
+	</script>
+</head>
+<body onload="charger()">
+<center>
+<table width="80%">
+	  <tr>
+		<td width ="35%">
+			<center style="border:3px; border-style:solid;  "><p> M.C.O. CASTRES-MAZAMET</p>
+			<br/>
+			<br/>
+			<table width="90%">
+				<tr>
+					<td>6 AV DE LA MONTAGNE</td><td>N° FINESS : 810000521</td>
+				</tr>
+				<tr>	<td>NOIRE</td></tr>
+				<tr>	<td>BP 30417</td></tr>
+				<tr>	<td>81108 Castres</td></tr>
+				
+				</table>
+			<br/>
+				<p id="hebergement"> UF Hébergement :</p>
+			<p id="medical"> UF Médicale : </p>
+			<br/>
+			<p> Chef de service</p>
+			<p id="titre"> Titre :</p>
+			<p id="nomchef"> Nom complet :</p>
+			<p id="numChef"> n° RPPS :</p>
+			</center>
+</td>
+		<td width="35%"><center style="border:3px; border-style:solid;" padding="500px" ><p> Identification du patient</p>
+			<br/>
+			<br/>
+			<table width="90%">
+				<tr>
+					<td id="nom">Patient : NOM  </td>
+				</tr>
+				<tr>
+				<td><p id="prenom">Prénom</p></td>
+				</tr>
+				<tr>
+				<td id="sexe">sexe :</td><td id="age">age : </td>
+				</tr>
+				<tr>
+				<td id="poids">poids :</td>
+				</tr>
+				<tr>
+				<td id="taille">taille :</td>
+				</tr>
+				</table>
+				<br/>
+				<br/>
+				<br/>
+				<br/><br/>
+			<p id="IPP"> IPP :<br/></p>
+			<br/>
+			<p id="numvenue"> Numéro de venue : <br/></p>
+				
+				
+				<br/>
+			</center></td>
+	  </tr>
+	  <tr>
+		<td colspan=2><p style="border:3px; border-style:solid;" id="allerg">Allergies ou autres intolérances :</p></td>
+	  </tr>
+	</table>
+	</center>
+	<p id="prescription">médicaments:</p>
+	<p id='date'>Signature : </p>
+	</body>

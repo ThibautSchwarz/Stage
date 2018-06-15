@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<web-app xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+	 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	 xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
+	 version="3.1">
+    <servlet>
+        <servlet-name>redirectionsurhtml</servlet-name>
+        <servlet-class>servlet.redirectionsurhtml</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>redirectionsurhtml</servlet-name>
+        <url-pattern>/redirectionsurhtml</url-pattern>
+    </servlet-mapping>
+    
+    <servlet>
+        <servlet-name>Chargement</servlet-name>
+        <servlet-class>servlet.Chargement</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>Chargement</servlet-name>
+        <url-pattern>/Chargement</url-pattern>
+    </servlet-mapping>
+    
+    <servlet>
+        <servlet-name>Afficherjs</servlet-name>
+        <servlet-class>servlet.Afficherjs</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>Afficherjs</servlet-name>
+        <url-pattern>/Afficherjs</url-pattern>
+    </servlet-mapping>
+    
+    <servlet>
+        <servlet-name>Ajouterjs</servlet-name>
+        <servlet-class>servlet.Ajouterjs</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>Ajouterjs</servlet-name>
+        <url-pattern>/Ajouterjs</url-pattern>
+    </servlet-mapping>
+</web-app>
