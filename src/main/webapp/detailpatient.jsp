@@ -190,8 +190,8 @@
             </a>  -  <a href = 
                     <%out.println("creerpancartejour?lien="+liencomplet+"&date="+jour.aujourdhuipropre());%>>
             pancarte complètée du jour 1    
-            </a>  -  <a href =<% 
-                    out.println(liencomplet);
+            </a>  -  <a href =<% param="creerpancartejour?date="+d+"&nom="+nom+"&prenom="+prenom+"&datedebut="+datedebut+"&lien=";
+                    out.println(param+lien);
                     %>>
             pancarte complètée du jour 2    
             </a>  -  <a href =<% 
@@ -200,6 +200,7 @@
             pancarte complètée du jour 3    
             </a>
         </h3>
-        <a href ="index.jsp">page d'accueil</a>
+        <a href ="index.jsp">page d'accueil</a><br/>
+        <a href ="">pancarte easily</a>
     </body>
 </html>
