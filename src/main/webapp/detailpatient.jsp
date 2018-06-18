@@ -167,13 +167,13 @@
         </p>
                 </td>
                 <jsp:useBean id="dossier" class="beans.pancartes" scope="request" />
-            <jsp:setProperty name="dossier" property="lien" value="c:/users/thibaut/Documents/NetBeansProjects/proceduresdegradees/src/main/webapp/prescriptions/" />
+            <jsp:setProperty name="dossier" property="lien" value="c:/proceduresdegradeest/src/main/webapp/prescriptions/" />
                 <td><%ArrayList<String> urlliste=dossier.chercherprescriptions(lien);
                 String Newligne=System.getProperty("line.separator");    
                 for (int i=0;i<urlliste.size();i++) { 
                 out.println("<p>");
                 out.println("<a href=");
-                out.println(urlliste.get(i));
+                out.println("afficherpresc?lien="+urlliste.get(i));
                 out.println(">");
                 out.println("prescription ");
                 out.println(i+1);
@@ -187,9 +187,8 @@
                     out.println(liencomplet);
                     %>>
             pancarte complète    
-            </a>  -  <a href =<% 
-                    out.println(liencomplet);
-                    %>>
+            </a>  -  <a href = 
+                    <%out.println("creerpancartejour?lien="+liencomplet+"&date="+jour.aujourdhuipropre());%>>
             pancarte complètée du jour 1    
             </a>  -  <a href =<% 
                     out.println(liencomplet);
