@@ -107,15 +107,14 @@ public ArrayList<String> chercherprescriptions(String lienpancarte){
         }}
         else{
         for(File path:paths) {
-            String lienpancarte =(path.toString());
-            trouve=trouve||(lienpancarte.equals("c:\\proceduresdegradeest\\src\\main\\webapp\\jsp\\le"+date+lien.substring(6)));
+            String lienpancarte2 =(path.toString());
+            trouve=trouve||(lienpancarte2.equals("c:\\proceduresdegradeest\\src\\main\\webapp\\jsp\\le"+date+lien.substring(6)));
         }
         }}
     return trouve;
     }
     
-    public void ajouterjsjour(String date,String datedebut,String nom,String prenom)throws InterruptedException {
-         
+    public void ajouterjsjour(String date,String datedebut,String nom,String prenom)throws InterruptedException {         
             pancartes cible=new pancartes();
             cible.setLien("c:/proceduresdegradeest/src/main/webapp/jsp/le"+date+lien.substring(6));
             try {
