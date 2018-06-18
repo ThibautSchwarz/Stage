@@ -87,7 +87,7 @@ public ArrayList<String> chercherprescriptions(String lienpancarte){
             String[] lienprescsplit=lienprescription.split("\\\\");
             String IPpresc=lienprescsplit[lienprescsplit.length-1].substring(6,15);
             if(IP.equals(IPpresc)){
-            urlpresc.add("prescriptions/"+lienprescsplit[lienprescsplit.length-1]); 
+            urlpresc.add(lienprescsplit[lienprescsplit.length-1]); 
         }}
     return urlpresc;
     
