@@ -100,12 +100,54 @@ public ArrayList<String> chercherprescriptions(String lienpancarte){
         //le fichier est vide on laisse trouve a false
         }
         else{
+        if (heure!=-1){
         for(File path:paths) {
             String lienpancarte =(path.toString());
             trouve=trouve||(lienpancarte.equals("c:\\proceduresdegradeest\\src\\main\\webapp\\jsp\\le"+date+"a"+heure+"h"+nom+"_"+prenom+"_"+lien.substring(6)));
         }}
+        else{
+        for(File path:paths) {
+            String lienpancarte =(path.toString());
+            trouve=trouve||(lienpancarte.equals("c:\\proceduresdegradeest\\src\\main\\webapp\\jsp\\le"+date+lien.substring(6)));
+        }
+        }}
     return trouve;
     }
+    
+    public void ajouterjsjour(String date,String datedebut,String nom,String prenom)throws InterruptedException {
+         
+            pancartes cible=new pancartes();
+            cible.setLien("c:/proceduresdegradeest/src/main/webapp/jsp/le"+date+lien.substring(6));
+            try {
+                Files.write(Paths.get(cible.getLien()), "".getBytes(), StandardOpenOption.CREATE);
+                }catch (IOException e) {
+e.printStackTrace();
+                }
+            pancartes jsp =new pancartes();
+            jsp.setLien("c:/proceduresdegradeest/src/main/webapp/jsp/javascriptjourcomplet.js");
+            pancartes html =new pancartes();
+            html.setLien("c:/proceduresdegradeest/src/main/webapp/pancartes/"+lien);
+            html.copier(cible,0,1149);
+            String newline=System.getProperty("line.separator"); 
+            String jour = (date.split("-"))[0];
+            try {
+                SimpleDateFormat format = new SimpleDateFormat("dd-mm-yyyy");
+                Files.write(Paths.get(cible.getLien()), ("var date="+jour+";"+newline).getBytes(), StandardOpenOption.APPEND);
+                Files.write(Paths.get(cible.getLien()), ("var nom='"+nom+"';"+newline).getBytes(), StandardOpenOption.APPEND);
+                Files.write(Paths.get(cible.getLien()), ("var prenom='"+prenom+"';"+newline).getBytes(), StandardOpenOption.APPEND);
+                Files.write(Paths.get(cible.getLien()), ("var datelong='"+date+"';"+newline).getBytes(), StandardOpenOption.APPEND);
+                Files.write(Paths.get(cible.getLien()), ("var lien='"+lien+"';"+newline).getBytes(), StandardOpenOption.APPEND);
+                Files.write(Paths.get(cible.getLien()), ("var datedebut='"+datedebut+"';"+newline).getBytes(), StandardOpenOption.APPEND);
+
+            }catch (IOException e) {
+                } 
+            jsp.copier(cible,0,300);
+            html.copier(cible,1153,100000);
+            html.ajouterok();
+            
+        }
+
+
     public void copier(pancartes target,int lignedebut,int lignefin) {
         try {
         File f=new File(lien);
