@@ -24,9 +24,9 @@
         <jsp:useBean id="jour" class="beans.date" scope="request" />
         <jsp:useBean id="jour1" class="beans.date" scope="request" />
         <jsp:useBean id="jour2" class="beans.date" scope="request" />
-        <jsp:setProperty name="jour" property="datedebut" property="datedebut" />
-        <jsp:setProperty name="jour1" property="datedebut" property="datedebut" />
-        <jsp:setProperty name="jour2" property="datedebut" property="datedebut" />
+        <jsp:setProperty name="jour" property="datedebut"  />
+        <jsp:setProperty name="jour1" property="datedebut"  />
+        <jsp:setProperty name="jour2" property="datedebut"  />
         <%jour1.demain();
         jour2.demain();
         jour2.demain();%>
@@ -187,17 +187,18 @@
                     out.println(liencomplet);
                     %>>
             pancarte complète    
-            </a>  -  <a href = 
-                    <%out.println("creerpancartejour?lien="+liencomplet+"&date="+jour.aujourdhuipropre());%>>
-            pancarte complètée du jour 1    
-            </a>  -  <a href =<% param="creerpancartejour?date="+d+"&nom="+nom+"&prenom="+prenom+"&datedebut="+datedebut+"&lien=";
+            </a>  -  <a href = <% param="creerpancartejour?date="+jour.afficher_propre()+"&nom="+nom+"&prenom="+prenom+"&datedebut="+datedebut+"&lien=";
                     out.println(param+lien);
                     %>>
-            pancarte complètée du jour 2    
-            </a>  -  <a href =<% 
-                    out.println(liencomplet);
+            pancarte du jour 1    
+            </a>  -  <a href =<% param="creerpancartejour?date="+jour1.afficher_propre()+"&nom="+nom+"&prenom="+prenom+"&datedebut="+datedebut+"&lien=";
+                    out.println(param+lien);
                     %>>
-            pancarte complètée du jour 3    
+            pancarte du jour 2    
+            </a>  -  <a href =<% param="creerpancartejour?date="+jour2.afficher_propre()+"&nom="+nom+"&prenom="+prenom+"&datedebut="+datedebut+"&lien=";
+                    out.println(param+lien);
+                    %>>
+            pancarte jour 3    
             </a>
         </h3>
         <a href ="index.jsp">page d'accueil</a><br/>
